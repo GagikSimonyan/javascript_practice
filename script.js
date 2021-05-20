@@ -1,68 +1,71 @@
-// TASK 12
 
-let n = +prompt('Enter a number', '');
-let i = 1;
-let s = 0;
-while (i <= n) {
-  s += i ** 2;
-  i++;
+// TASK 23
+
+let n = +prompt("Enter a number", "");
+while (n) {
+  let digit = n % 10;
+  console.log(digit);
+  n = Math.floor(n / 10);
 }
-console.log(`s = ${s}`);
 
 
 
-// TASK 13
+// TASK 24
 
-let i = +prompt('Enter a number', '');
-let y = 1;
-let k = 1;
+let n = 153;
+let m = n;
+let p = 0;
 
-while (k <=i) {
-  y *= 2;
-  k++;
+while (m) {
+  let d = m % 10;
+  if (d >= 5) {
+    console.log(`n = ${n}`);
+    break;
+  }
+  else {
+    p = p * 10 + d * 2;
+    console.log(`p = ${p}`);
+  }
+  m = Math.floor(m / 10);
 }
-console.log(`y = ${y}`);
 
 
 
-// TASK 14
+// TASK 1 page 72
 
-let a = +prompt('Enter a number', '');
-let s = 0;
-let i = 1;
-
-while (s <= a) {
-  s += i ** 2;
-  i++;
+let y = 0;
+for (let x = 1; x <= 8; x += 0.2) {
+    if (x < 5)  y = 2 * x + 1
+    else y = (x * x) - 1
 }
-console.log(`s = ${s}`);
+console.log(y);
 
 
 
-// TASK 15
+// TASK 2 page 72
 
-let n = +prompt('Enter a number', '');
+let y = 0;
+let z;
+for (let x = 1; x <= 12; x += z) {
+    if (x < 3) {
+        y = 5 * x + 2
+    } else if (x <= 10 && x >= 3) {
+        y = (x * x) + x - 1
+    }
+    else {
+        y = 1
+    }
+}
+console.log(y);
+
+
+
+// TASK 3 page 72
+
+let n = +prompt("Enter a number", "");
 let s = 0;
-let z = 1;
 
 for (let i = 1; i <= n; i++) {
-  z *= 2;
-  s += z;
+    s = s + Math.sin(i)/Math.cos(i);
 }
-console.log(`s = ${s}`);
-
-
-
-// TASK 16
-
-let n = +prompt('Enter a number', '');
-let s = 0;
-let h = 0;
-
-for (let i = 1; i < n; i++) {
-  h += Math.sin(i);
-  s += i /h;
-}
-console.log(`s = ${s}`);
-
-
+console.log(s);
