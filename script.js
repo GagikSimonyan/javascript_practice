@@ -1,71 +1,82 @@
+// TASK 4 PAGE 73
 
-// TASK 23
-
-let n = +prompt("Enter a number", "");
-while (n) {
-  let digit = n % 10;
-  console.log(digit);
-  n = Math.floor(n / 10);
-}
-
-
-
-// TASK 24
-
-let n = 153;
-let m = n;
-let p = 0;
-
-while (m) {
-  let d = m % 10;
-  if (d >= 5) {
-    console.log(`n = ${n}`);
-    break;
-  }
-  else {
-    p = p * 10 + d * 2;
-    console.log(`p = ${p}`);
-  }
-  m = Math.floor(m / 10);
-}
-
-
-
-// TASK 1 page 72
-
-let y = 0;
-for (let x = 1; x <= 8; x += 0.2) {
-    if (x < 5)  y = 2 * x + 1
-    else y = (x * x) - 1
-}
-console.log(y);
-
-
-
-// TASK 2 page 72
-
-let y = 0;
-let z;
-for (let x = 1; x <= 12; x += z) {
-    if (x < 3) {
-        y = 5 * x + 2
-    } else if (x <= 10 && x >= 3) {
-        y = (x * x) + x - 1
-    }
-    else {
-        y = 1
-    }
-}
-console.log(y);
-
-
-
-// TASK 3 page 72
-
-let n = +prompt("Enter a number", "");
+let n = +prompt('Enter a number', '');
+let x = +prompt('Enter an X', '');
 let s = 0;
 
 for (let i = 1; i <= n; i++) {
-    s = s + Math.sin(i)/Math.cos(i);
+  s = s + Math.sin(i) * x;
 }
-console.log(s);
+console.log(`s = ${s}`);
+
+
+
+// TASK 8 PAGE 73
+
+let n = +prompt('Enter a number', '');
+let x = +prompt('Enter an X', '');
+let y = 1;
+let k = 1;
+let f = 1;
+
+for (let i = 1; i <= n; i++) {
+  y = y * ((Math.cos(i) * x) / k * f);
+  k = k * 2;
+  f = f * i;
+}
+console.log(`y = ${y}`);
+
+
+
+// TASK 9 PAGE 73
+
+let n = +prompt('Enter a number', '');
+let y = 1;
+let i = 0;
+
+if (n % 2 === 0) i = 2;
+else i = 1;
+
+while (i <= n) {
+  y = y * i;
+  i = i + 2;
+}
+console.log(`y = ${y}`);
+
+
+
+// TASK 10 PAGE 73
+
+let a = +prompt('Enter a number', '');
+let i = 1;
+let b = Math.pow(4, i);
+
+while (b < a) {
+  i++;
+  b = Math.pow(4, i);
+}
+console.log(`i = ${i}`);
+
+
+
+// TASK 12 PAGE 73
+
+let n = +prompt('Enter a number', '');
+let s = 0;
+while (n) {
+  let d = n % 10;
+  s = s + d;
+  n = Math.floor(n / 10);
+}
+console.log(`s = ${s}`);
+
+
+
+// TASK 13 PAGE 73
+
+let n = +prompt('Enter a number', '');
+while (n) {
+  let d = n % 10;
+  console.log(d)
+  n = Math.floor(n / 10);
+}
