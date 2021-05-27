@@ -1,82 +1,52 @@
-// TASK 4 PAGE 73
+// TASK 28 PAGE 83
 
-let n = +prompt('Enter a number', '');
-let x = +prompt('Enter an X', '');
+let n = +prompt('Enter n', '');
+let p = +prompt('Enter p', '');
+let a = +prompt('Enter a', '');
 let s = 0;
-
-for (let i = 1; i <= n; i++) {
-  s = s + Math.sin(i) * x;
-}
-console.log(`s = ${s}`);
-
-
-
-// TASK 8 PAGE 73
-
-let n = +prompt('Enter a number', '');
-let x = +prompt('Enter an X', '');
 let y = 1;
-let k = 1;
-let f = 1;
 
-for (let i = 1; i <= n; i++) {
-  y = y * ((Math.cos(i) * x) / k * f);
-  k = k * 2;
-  f = f * i;
+for (let m = 1; m <= n; m++) {
+  for (let k = 0; k <= p; k++) {
+    s = s + a * (m + k);
+  }
+  y = y * m ** 2 + s
 }
-console.log(`y = ${y}`);
+console.log(y);
 
 
 
-// TASK 9 PAGE 73
+// TASK 29 PAGE 83
 
 let n = +prompt('Enter a number', '');
-let y = 1;
-let i = 0;
 
-if (n % 2 === 0) i = 2;
-else i = 1;
-
-while (i <= n) {
-  y = y * i;
-  i = i + 2;
+prime: for (let i = 2; i <= n; i++) {
+  for (let j = 2; j <= i / 2; j++) {
+    if (i % j === 0) {
+      continue prime;
+    }
+  }
+  console.log(`${i} is prime`);
 }
-console.log(`y = ${y}`);
 
 
 
-// TASK 10 PAGE 73
+// TASK 30 PAGE 83
 
-let a = +prompt('Enter a number', '');
-let i = 1;
-let b = Math.pow(4, i);
+let n = +prompt('Enter n', '');
+let m = +prompt('Enter m', '');
 
-while (b < a) {
-  i++;
-  b = Math.pow(4, i);
-}
-console.log(`i = ${i}`);
-
-
-
-// TASK 12 PAGE 73
-
-let n = +prompt('Enter a number', '');
-let s = 0;
-while (n) {
-  let d = n % 10;
-  s = s + d;
-  n = Math.floor(n / 10);
-}
-console.log(`s = ${s}`);
-
-
-
-// TASK 13 PAGE 73
-
-let n = +prompt('Enter a number', '');
-while (n) {
-  let d = n % 10;
-  console.log(d)
-  n = Math.floor(n / 10);
+f1: for (let i = n; i <= m; i++) {
+  f2:for (let j = 2; j <= Math.sqrt(i); j++) {
+    let a = i;
+    while (a !== 1) {
+      if (a % j !== 0) {
+        continue f2;
+      } else {
+        a = a / j;
+      }
+    }
+    console.log(i);
+    continue f1;
+  }
 }
