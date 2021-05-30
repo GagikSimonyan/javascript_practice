@@ -1,52 +1,62 @@
-// TASK 28 PAGE 83
-
-let n = +prompt('Enter n', '');
-let p = +prompt('Enter p', '');
-let a = +prompt('Enter a', '');
-let s = 0;
-let y = 1;
-
-for (let m = 1; m <= n; m++) {
-  for (let k = 0; k <= p; k++) {
-    s = s + a * (m + k);
+function factorial(n){
+  if(n == 0 || n == 1){
+      return 1;
+  }else{
+      return n * factorial(n - 1);
   }
-  y = y * m ** 2 + s
 }
-console.log(y);
+
+
+// TASK 2 PAGE 92
+
+let n = +prompt('Enter an n', '');
+let m = +prompt('Enter an m', '');
+let s = 0;
+
+for (let i = n; i <= m; i++) {
+    s += i ** i;
+}
+console.log(s);
 
 
 
-// TASK 29 PAGE 83
+// TASK 3 PAGE 92
 
 let n = +prompt('Enter a number', '');
+let s = 0 ;
+let p = 1;
 
-prime: for (let i = 2; i <= n; i++) {
-  for (let j = 2; j <= i / 2; j++) {
-    if (i % j === 0) {
-      continue prime;
+for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= i; j++) {
+        p = p * (i + 1) * (i + j ** 2);
     }
-  }
-  console.log(`${i} is prime`);
+    s += p;
 }
+console.log(s);
 
 
 
-// TASK 30 PAGE 83
+// TASK 4 PAGE 92
 
 let n = +prompt('Enter n', '');
-let m = +prompt('Enter m', '');
+let x = +prompt('Enter x', '');
+let s = 0 ;
 
-f1: for (let i = n; i <= m; i++) {
-  f2:for (let j = 2; j <= Math.sqrt(i); j++) {
-    let a = i;
-    while (a !== 1) {
-      if (a % j !== 0) {
-        continue f2;
-      } else {
-        a = a / j;
-      }
-    }
-    console.log(i);
-    continue f1;
-  }
+for (let i = 1 ; i <= n; i++){
+   s = s + ((i ** i) * (x ** i) / factorial(i))
 }
+console.log(s);
+
+
+
+// TASK 5 PAGE 92
+
+let n = +prompt('Enter a number', '');
+let s = 0;
+let y = 1 / factorial(n);
+
+for (let k = 1; k <= n; k++) {
+    let z = factorial(2 * (k ** 2) + 1);
+    s = y + ((-1) ** k) * z;
+}
+console.log(s);
